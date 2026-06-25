@@ -1,32 +1,130 @@
-body {
-    font-family: system-ui, sans-serif;
-    margin: 0;
-    background: #111827;
-    color: white;
+.dashboard {
+  width: min(720px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0;
 }
 
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 32px;
+header { margin-bottom: 32px; }
+
+.eyebrow,
+.card-label {
+  color: #6d5ce7;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 8px 0;
+  color: #172033;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.05;
+}
+
+.intro { color: #667085; }
+
+.entry-card,
+.analysis-card {
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(23, 32, 51, 0.07);
+}
+
+.entry-card {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  color: #172033;
+  font-weight: 700;
 }
 
 textarea {
-    width: 100%;
-    min-height: 160px;
-    padding: 12px;
-    font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px;
+  resize: vertical;
+  border: 1px solid #cfd4dc;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  color: #172033;
+  font: inherit;
+}
+
+textarea:focus {
+  border-color: #6d5ce7;
+  box-shadow: 0 0 0 3px rgba(109, 92, 231, 0.14);
 }
 
 button {
-    margin-top: 12px;
-    padding: 10px 16px;
-    cursor: pointer;
+  justify-self: start;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #6d5ce7;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-section {
-    margin-top: 24px;
-    padding: 20px;
-    background: #1f2937;
-    border-radius: 12px;
+button:hover:not(:disabled) { background: #5948d6; }
+button:disabled { cursor: not-allowed; opacity: 0.55; }
+
+.analysis-card {
+  min-height: 160px;
+  margin-top: 24px;
+}
+
+.analysis-card h2 {
+  margin: 8px 0 20px;
+  color: #172033;
+  font-size: 1.5rem;
+}
+
+.analysis-card h3 {
+  margin: 0 0 6px;
+  color: #344054;
+  font-size: 0.9rem;
+}
+
+.analysis-content {
+  display: grid;
+  gap: 20px;
+}
+
+.analysis-content p,
+.empty-state {
+  color: #667085;
+  line-height: 1.6;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-list li {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f0edff;
+  color: #5948d6;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.error-message { color: #b42318; }
+
+@media (max-width: 560px) {
+  .dashboard { padding: 36px 0; }
+  .entry-card, .analysis-card { padding: 18px; }
 }
